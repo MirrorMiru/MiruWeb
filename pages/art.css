@@ -1,0 +1,89 @@
+body{
+    background-image: url(../IMG/background1.jpg);
+    max-width: 960px;
+    margin:0 auto;
+    height: auto;
+}
+@font-face {
+    font-family: Cherrish;
+    src: url(../FONTS/Cherish.ttf);
+}
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: url("./FONTS/comici.ttf");
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+  h1{
+    color : #ffffff;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: Cherrish;
+    text-align: center;
+}
+h2{
+color: #ffffff;
+font-size: 20px;
+font-weight: lighter;
+font-family: Cherrish;
+}
+
+butttext{
+    color : #ffffff;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: Cherrish;
+}
+
+butt{
+    text-align:justify;
+    margin: 5%;
+}
+
+
+
+
+  br{
+    width: 20px;
+}
+
+.column {
+    float: left;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .scrollbox{
+    width: 25%;
+    color: #000;
+    text-align: justify;
+    height:220px;
+    border-top: rgb(255, 78, 196);
+    border-bottom: rgb(198, 33, 204);
+    border-left: rgb(195, 121, 255);
+    border-right: rgb(255, 34, 207);
+    border-style: solid;
+    font-size: large;
+    padding: 3%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-image: url(../IMG/background6.png);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-width: 10px;
+}
+
+
+

@@ -1,0 +1,86 @@
+body{
+    background-image: url(../../IMG/background5.jpg);
+    max-width: 960px;
+    margin:0 auto;
+    height: auto;
+}
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: url("./FONTS/comici.ttf");
+  }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+  h1{
+    color : #000000;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: "Comic Sans MS";
+    text-align: center;
+}
+
+butttext{
+    color : #000000;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Comic Sans MS";
+}
+h2{
+color: #000000;
+font-size: 25px;
+
+font-family: "Comic Sans MS";
+justify-content: left;
+}
+h3{
+    color: #000000;
+font-size: 15px;
+font-weight: lighter;
+font-family: 'Comic Sans MS';
+justify-content: left;
+}
+h4{
+    color: #000000;
+font-size: 15px;
+font-weight: lighter;
+font-family: 'Comic Sans MS';
+justify-content: left;
+}
+h5{
+    color: #000000;
+    font-size: 20px;
+    
+    font-family: 'Comic Sans MS';
+    justify-content: left;
+    } 
+
+.wrapper {
+
+    overflow: hidden;
+}
+.first {
+
+    float:left;
+}
+.second {
+    float: left;
+    
+    
+}
+br{
+    width: 20px;
+}
+.column {
+    float: left;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

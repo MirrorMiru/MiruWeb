@@ -1,0 +1,134 @@
+body{
+    background-image: url(../../IMG/background1.jpg);
+    max-width: 960px;
+    margin:0 auto;
+    height: auto;
+}
+@font-face {
+    font-family: Cherrish;
+    src: url(../../FONTS/Cherish.ttf);
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+  h1{
+    color : #ffffff;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: Cherrish;
+    text-align: center;
+}
+
+butttext{
+    color : #ffffff;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: Cherrish;
+}
+
+butt{
+    text-align:justify;
+    margin: 5%;
+}
+
+.topbar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+.topbar2{
+    margin-left: auto;
+    margin-right: auto;
+    background : -webkit-gradient( linear, left top, left bottom, color-stop(.01, #000000), color-stop(1, #000e3a) );
+    width: auto;
+    text-align: center;
+}
+
+  .scrollbox{
+
+        width: 720px;
+        color: #000;
+        text-align: justify;
+        height: auto;
+        border-top: rgb(255, 36, 36);
+        border-bottom: rgb(86, 255, 86);
+        border-left: rgb(72, 72, 255);
+        border-right: rgb(221, 221, 49);
+        border-style: solid;
+        font-size: large;
+        padding: 3%;
+        background-image: url(../../IMG/background2.jpg);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-width: 10px;
+        margin-bottom: 50px; 
+        margin-top: 50px;
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+  }
+
+  .container{
+      border-top: rgb(255, 36, 36);
+      border-bottom: rgb(86, 255, 86);
+      border-left: rgb(72, 72, 255);
+      border-right: rgb(221, 221, 49);
+      border-style: solid;
+      border-width: 10px;
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      overflow: hidden;
+  }
+
+  tit{
+    color: #ffffff;
+    font-size: 25px;
+    font-weight:bold;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+
+  post{
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+
+  date{
+    color: #ffffff;
+    font-size: 13px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    float:bottom;
+    bottom: 0;
+  }
+
+  br{
+    width: 20px;
+}
+
+.column {
+    float: left;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .imagelink{
+    font-size: 500px;
+    opacity: 0%;
+
+  }
+

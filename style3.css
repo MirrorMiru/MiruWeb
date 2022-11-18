@@ -1,0 +1,83 @@
+body{
+    background-image: url(IMG/background3.png);
+    max-width: 960px;
+    margin:0 auto;
+    height: auto;
+}
+@font-face {
+    font-family: Romance;
+    src: url(FONTS/RomanceA.ttf);
+}
+
+@font-face {
+    font-family: 'Comic Sans MS';
+    src: url("./FONTS/comici.ttf");
+  }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+  h1{
+    color : #ffffff;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: Romance;
+    text-align: center;
+}
+
+butttext{
+    color : #ffffff;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: Romance;
+}
+h2{
+color: #ffffff;
+font-size: 35px;
+font-weight: lighter;
+font-family: Romance;
+
+}
+h3{
+    color: #ff84da;
+font-size: 15px;
+font-weight: lighter;
+font-family: 'Comic Sans MS';
+justify-content: left;
+}
+h4{
+    color: #61a6ff;
+font-size: 15px;
+font-weight: lighter;
+font-family: 'Comic Sans MS';
+justify-content: left;
+}
+.wrapper {
+
+    overflow: hidden;
+}
+.first {
+
+    float:left;
+}
+.second {
+    float: left;
+    
+    
+}
+br{
+    width: 20px;
+}
+.column {
+    float: left;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
