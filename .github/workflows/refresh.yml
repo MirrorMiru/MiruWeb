@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron:  '0 3 * * *' # Runs every day at 3am
+    - cron:  '0 0 * * *' # refresh at midnight
 
 jobs:
   refresh:
@@ -15,3 +15,4 @@ jobs:
           # You must create a personal token with repo access as GitHub does
           # not yet support server-to-server page builds.
           USER_TOKEN: ${{ secrets.USER_TOKEN }}
+#idk what any of this dose I stole it from stack overflow.
