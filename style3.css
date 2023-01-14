@@ -4,6 +4,10 @@ body{
     margin:0 auto;
     height: auto;
 }
+
+.butttext:hover {
+    color: rgb(234, 255, 0);
+  }
 @font-face {
     font-family: Romance;
     src: url(FONTS/RomanceA.ttf);
@@ -28,7 +32,7 @@ body{
     text-align: center;
 }
 
-butttext{
+.butttext{
     color : #ffffff;
     font-size: 25px;
     font-weight: lighter;
