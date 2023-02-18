@@ -47,6 +47,7 @@ function preload(){
     bgImg2 = loadImage("images/Bg2.png")
     bgImg3 = loadImage("images/Bg3.png")
     bgImgUG = loadImage("images/CityBG.png")
+    
 
     
     //decal
