@@ -104,3 +104,51 @@ br{
     
   }
 
+  .butttext{
+    color : #ffffff;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: Cherrish;
+}
+
+.butttext2{
+  color : #ffffff;
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: Cherrish;
+}
+
+.butttext3{
+  color : #ffffff;
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: Cherrish;
+}
+
+.butttext4{
+  color : #000000;
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: Cherrish;
+}
+
+.butttext:hover{
+  color: rgb(255, 36, 36);
+
+}
+
+.butttext2:hover {
+  color: rgb(221, 221, 49);
+}
+ 
+
+
+.butttext3:hover {
+  color: rgb(86, 255, 86);
+  
+}
+
+.butttext4:hover {
+  color: rgb(72, 72, 255);
+}
+  
