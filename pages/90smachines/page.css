@@ -1,5 +1,5 @@
 body{
-    background-image: url(../../IMG/circuitsdark.gif);
+    background-image: url(../../IMG/background5.jpg);
     max-width: 960px;
     margin:0 auto;
     height: auto;
@@ -20,16 +20,15 @@ body{
     text-align: center;
   }
   h1{
-    color : #ffffff;
-    font-size: 15px;
-    font-weight: lighter;
-    font-family: Cherrish;
-    text-align: center;
-}
-.butttext{
-    color : #ffffff;
+    color : #000000;
     font-size: 20px;
     font-weight: lighter;
+    font-family: 'Comic Sans MS';
+}
+butttext{
+    color : #000000;
+    font-size: 25px;
+    font-weight: bold;
     font-family: 'Comic Sans MS';
 }
 
@@ -95,12 +94,6 @@ td{
 }
 
 
-butttext{
-    color : #ffffff;
-    font-size: 25px;
-    font-weight: lighter;
-    font-family: Cherrish;
-}
 
 butt{
     text-align:justify;
@@ -111,7 +104,7 @@ butt{
 
 
   br{
-    width: 20px;
+    width: 50px;
 }
 
 .column {
