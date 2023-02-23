@@ -7,13 +7,16 @@ var gameState = "title"
 let dia1 = 0
 let dia2 = 0
 let dia3 = 0
+let dia4 = 0
 let w = false
 let w2 = false
+let w3 =false
+let shards = 0
 var button
 var PG, JG
 let death = false
-var jumpbox, jumpbox2, jumpboxM1, jumpboxM2,jumpbox3,jumpbox4, movebox
-var moving1, moving2
+var jumpbox, jumpbox2, jumpboxM1, jumpboxM2,jumpbox3,jumpbox4, movebox, jumpboxM3
+var moving1, moving2,moving3
 var fall, fallbox, stopper, falldetect
 var bouncebox, bouncebox2, bounceboxE1,bounceboxE2
 var bounceboxE3,bounceboxE4, bounceboxE5, bounceboxE6
@@ -25,7 +28,7 @@ let checkpoint = 0
 let deathtype = 0
 var deathmessage
 var npc1D, npc2D
-var wrench, wrench2
+var wrench, wrench2, shard1, shard2
 var runs, jumps, walks
 var dies, respawns
 var getw
@@ -41,7 +44,20 @@ var mpos
 let input,button2
 let goofy = null
 var grounded
+var gameOver = false
+let ending
+
+
 function preload(){
+
+    //end cutscene
+    end1I = loadAnimation("images/End1.png","images/End2.png","images/End3.png","images/End4.png","images/End5.png")
+    end1I.frameDelay = 100
+    end1I.stop()
+    end1I.looping = false;
+  
+
+
     //bg
     bgImg = loadImage("images/Bg.png")
     bgImg2 = loadImage("images/Bg2.png")
@@ -122,10 +138,18 @@ function preload(){
     freind2 = loadAnimation("images/Fren1.png")
     freind3 = loadAnimation("images/Playerspeak.png")
     freind4 = loadAnimation("images/Fren2.png")
+
+    playerdia = loadAnimation("images/playerspeak2.png")
+    playerdia2 = loadAnimation("images/playerK.png")
+
+    guy1dia = loadAnimation("images/npc3dia1.png")
 //wrench
     wrenchI = loadAnimation("images/w1.png","images/w2.png","images/w3.png","images/w4.png","images/w5.png","images/w6.png","images/w7.png","images/w8.png")
     wrench2I =  loadAnimation("images/w21.png","images/w22.png","images/w23.png","images/w24.png","images/w25.png","images/w26.png","images/w27.png","images/w28.png")
-//die
+shard1I = loadAnimation("images/shard1.png")
+shard2I = loadAnimation("images/shard2.png")
+
+    //die
     dief = loadAnimation("images/DieJump.png")
     diee = loadAnimation("images/DieEnemy.png")
     diew = loadAnimation("images/DieWrench.png")
@@ -155,6 +179,8 @@ function setup(){
     //GROUPS
     PG = new Group()
     JG = new Group()
+
+   
      //moving
      createMoving()
     //BG
@@ -271,6 +297,9 @@ function setup(){
     createPlatform(800/2 - 7500,700-80, 0.5)
 
     //CITY
+    createPlatform3(800/2 - 1500,700-180, 0.3)
+    createPlatform4(-15165, 700 - 90, 0.5)
+    //createPlatform3(-15165,700-180, 0.3)
     createPlatform4(-15750, 700 - 90, 0.5)
     createPlatform4(-16528, 700 - 90, 0.5)
     createPlatform2(800/2 - 17300, 700 - 90, 0.4)
@@ -283,6 +312,18 @@ function setup(){
     createPlatform4(800/2 - 20000,700-100, 0.5)
     createPlatform3(800/2 - 20500,700-180, 0.3)
     createPlatform3(800/2 - 21000,700-180, 0.3)
+    //moving here
+    createPlatform4(800/2 - 22400,700-100, 0.5)
+    createPlatform3(800/2 - 22900,700-180, 0.3)
+    createPlatform4(800/2 - 23500,700-100, 0.5)
+    createPlatform4(800/2 - 24300,700-100, 0.5)
+    enemy13 = createSprite(800/2 - 24200,  700/2-27.5)
+  enemy13.addAnimation("saw",sawA)
+  enemy13.setCollider("circle",0,0,155)
+  
+  enemy13.scale = 0.3
+   //e11
+    //back
     //LVL1
     createPlatform2(800/2 + 1000,700-180 , 0.2)
     createPlatform(800/2 + 400 ,700-100 ,0.5)
@@ -301,6 +342,14 @@ function setup(){
     jumpboxM2.setCollider("rectangle", -10 , -200 ,300,20)
     jumpboxM2.visible = false
     JG.add(jumpboxM2)
+    jumpboxM3 = createSprite(800/2 - 21300, 700 - 50)
+    jumpboxM3.setCollider("rectangle", -10 , -200 ,300,20)
+    jumpboxM3.visible = false
+    JG.add(jumpboxM3)
+    jumpboxM4 = createSprite(800/2 - 21700, 700 - 50)
+    jumpboxM4.setCollider("rectangle", -10 , -200 ,300,20)
+    jumpboxM4.visible = false
+    JG.add(jumpboxM4)
 
     createPlatform2(800/2 + 2880, 700-160 , 0.2)
     createPlatform2(800/2 + 3250, 700-265 , 0.2)
@@ -326,7 +375,17 @@ function setup(){
     moving2.addImage(PlatformI1 )
     moving2.scale = 0.3
     moving2.velocityY = -3
-    moving2.debug = true
+
+    moving3 = createSprite(800/2 - 21300, 500,20,20)
+    moving3.addImage(PlatformI1 )
+    moving3.scale = 0.3
+    moving3.velocityY = -3
+
+    moving4 = createSprite(800/2 - 21700, 500,20,20)
+    moving4.addImage(PlatformI1 )
+    moving4.scale = 0.3
+    moving4.velocityY = -6
+   // moving2.debug = true
     //LVL2
     
 
@@ -365,6 +424,17 @@ function setup(){
     npc2D.addAnimation("f2",freind2)
     npc2D.addAnimation("f3",freind3)
     npc2D.addAnimation("f4",freind4)
+//npc3
+npc3 = createSprite(800/2 - 20000, 240)
+npc3.addAnimation("npc3",NpcI3)
+npc3.scale = 0.21
+npc3.setCollider("rectangle",100,0,600,1150)
+
+npc3D =createSprite(npc3.x,npc3.y - 150)
+npc3D.addAnimation("f1", guy1dia)
+npc3D.addAnimation("f2",playerdia)
+npc3D.addAnimation("f3",playerdia2)
+npc3D.scale = 0.5
 //=========================================================PLAYER=============================================================================
     player = createSprite(800/2 , 0)
 
@@ -454,6 +524,12 @@ enemy2.velocityX = 3
   enemy11.setCollider("circle",0,0,155)
   //enemy9.debug = true
   enemy11.scale = 0.3
+
+  enemy12 = createSprite(800/2 - 23450,  700/2-27.5)
+  enemy12.addAnimation("saw",sawA)
+  enemy12.setCollider("circle",0,0,155)
+  //enemy9.debug = true
+  enemy12.scale = 0.3
  
 //===============================================================wrench==============================================================================
     wrench = createSprite(800/2+9000 , 700-350)
@@ -463,6 +539,16 @@ enemy2.velocityX = 3
     wrench2 = createSprite(800/2-7500 , 700/2)
     wrench2.addAnimation("w2",wrench2I)
     wrench2.scale = 0.3
+
+    shard1 = createSprite(800/2 - 24400, 700/2-27.5)
+    shard1.addAnimation("s1", shard1I)
+    shard1.scale = 0.3
+
+    shard2 = createSprite(-15110, 700/2+10)
+    shard2.addAnimation("s2", shard2I)
+    shard2.scale = 0.3
+
+
 //================================================================message========================================================
     deathmessage = createSprite(800/2, 700/2)
     deathmessage.addAnimation("1",dief)
@@ -472,7 +558,7 @@ enemy2.velocityX = 3
     //cutscene
     cut1 = createSprite(800/2,700/2)
     cut1.addImage(cut1I)
-    cut1.scale = .40
+    cut1.scale = 1
     cut1.visible = false
  
 //================================================================title====================================================================
@@ -498,7 +584,11 @@ enemy2.velocityX = 3
     button2.position(800-780, 700-30);
     button2.mousePressed(cheat);
 
-   
+
+
+    ending = createSprite(400,350)
+    ending.addAnimation("end1",end1I)
+ending.visible=false
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++END+++++++++++++++++++++++++++++++++++++++++++++++++++
 }
 
@@ -507,8 +597,8 @@ function draw(){
     background(255)
 
 //PLAY
-if(gameState === "play"){
-
+if(gameState === "play" ){
+if(gameOver == false){
   //music script (broken)
   /*
   if (checkpoint < 2 && music.isPlaying() === false) {
@@ -564,6 +654,8 @@ if (music2.isPlaying() === false && bruh === 1){
         player.collide(PG)
         player.collide(moving1)
         player.collide(moving2)
+    player.collide(moving3)
+    player.collide(moving4)
         player.collide(door)
         player.collide(fall)
     if(w2 === true){
@@ -690,7 +782,7 @@ if(player.isTouching(movebox)){
     //NPC1-end
 
     if(keyWentDown("P")){
-        w = true
+        shards = 2
     }
 
     //++++++++++++++++++++++++++++++++npc2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -731,6 +823,37 @@ if(player.isTouching(movebox)){
                 npc2D.changeAnimation("f4",freind4)
             }
         }
+//npc3
+if(player.isTouching(npc3)){
+    npc3D.visible = true
+  //  console.log(dia3)
+    
+    if(dia4 < 2 && shards == 2){
+    if(keyWentUp("SPACE")){
+        dia4 = dia4 + 1
+    }
+}
+}
+else{
+    npc3D.visible = false
+}
+
+if(player.isTouching(npc3)&& shards != 2 && dia4 == 0){
+    if(keyWentDown("SPACE")){
+    npc3D.changeAnimation("f2",playerdia )
+    }
+}
+if(player.isTouching(npc3)&& shards == 2 ){
+    if(keyWentDown("SPACE")){
+    npc3D.changeAnimation("f3",playerdia2 )
+    }
+}
+if(player.isTouching(npc3)&& shards == 2 &&dia4 == 1){
+    if(keyWentDown("SPACE")){
+    endGame()
+    }
+}
+
 
 
 //====================wrench========================================
@@ -748,6 +871,25 @@ if(player.isTouching(wrench2)){
     }
     wrench2.visible = false
     w2 = true
+}
+
+if(player.isTouching(shard1)){
+    if(getw.isPlaying() === false && shard1.visible == true){
+        getw.play()
+        shards = shards + 1
+        
+    }
+    shard1.visible = false
+  
+}
+if(player.isTouching(shard2)){
+    if(getw.isPlaying() === false && shard2.visible == true){
+        getw.play()
+        shards = shards + 1
+        
+    }
+    shard2.visible = false
+  
 }
 
         //=======================moving 1===============================
@@ -770,6 +912,18 @@ if(player.isTouching(wrench2)){
             moving2.velocityY = -3        }
 
         jumpboxM2.y = moving2.y
+
+        if(moving3.y < -40){
+            moving3.y = 1100
+            moving3.velocityY = -4        }
+
+        jumpboxM3.y = moving3.y
+
+        if(moving4.y < -40){
+            moving4.y = 1100
+            moving4.velocityY = -6        }
+
+        jumpboxM4.y = moving4.y
 
         //===================gravity===================================
         player.velocityY += 1
@@ -947,6 +1101,9 @@ if(player.isTouching(wrench2)){
                 }
 
                 reset()
+                shards = 0
+                shard1.visible = true
+                shard2.visible = true
             }
             else if(death === false){
                 player.changeAnimation("idle", PlayerI)
@@ -955,7 +1112,7 @@ if(player.isTouching(wrench2)){
             
         }
 
-if(death === false){
+if(death === false ){
 if(w === false){
         if(player.y > 800){
             death = true
@@ -965,7 +1122,7 @@ if(w === false){
 
         if(player.isTouching(enemy1) ||player.isTouching(enemy2) ||player.isTouching(enemy3) || player.isTouching(enemy4)
         || player.isTouching(enemy5)|| player.isTouching(enemy6)|| player.isTouching(enemy7)||player.isTouching(enemy8)||player.isTouching(enemy9)||player.isTouching(enemy10)
-        ||player.isTouching(enemy11)
+        ||player.isTouching(enemy11) || player.isTouching(enemy12) || player.isTouching(enemy13)
         ){
             deathtype = 2
             death = true
@@ -982,7 +1139,7 @@ else if(w === true){
 
     if(player.isTouching(enemy1) ||player.isTouching(enemy2) ||player.isTouching(enemy3) || player.isTouching(enemy4)
     || player.isTouching(enemy5)|| player.isTouching(enemy6)|| player.isTouching(enemy7)||player.isTouching(enemy8)||player.isTouching(enemy9)||player.isTouching(enemy10)
-    ||player.isTouching(enemy11)
+    ||player.isTouching(enemy11) || player.isTouching(enemy12) || player.isTouching(enemy13)
     ){
         deathtype = 3
         death = true
@@ -1019,7 +1176,7 @@ else{
 
 
 //MOVEMENT
-if(death === false){
+if(death === false ){
     if(Math.round(player.velocityX) > 0){
       //  if(player.isTouching(JG)){
         player.velocityX = player.velocityX - 1
@@ -1074,11 +1231,13 @@ if(death === false){
         level = 1
     }
     //more debug
-    if(keyWentDown("0")){
-        console.log(player.x)
-    }
+  //  if(keyWentDown("0")){
+  //      console.log(player.x)
+   // }
 
-
+if(keyWentDown("p")){
+    shards = 2
+}
 
 
         //JUMP
@@ -1211,7 +1370,7 @@ if(death === false){
    // console.log(grounded)
     //    console.log(enemy3.y)
         
-     
+}
     }
 
         
@@ -1269,11 +1428,26 @@ async function createMoving(){
     moving1.addImage(PlatformI1)
     moving1.scale = 0.2
     moving1.velocityX = 4
+    
     moving2 = createSprite(800/2 + 7000, 700 - 20,20,20)
     moving2.setCollider("rectangle", -10 , -360 ,580,50)
     moving2.addImage(PlatformI2)
     moving2.scale = 0.5
     moving2.velocityY = -3
+
+    moving3 = createSprite(800/2 - 21300, 700 - 20,20,20)
+    moving3.setCollider("rectangle", -10 , -360 ,580,50)
+    moving3.addImage(PlatformI2)
+    moving3.scale = 0.5
+    moving3.velocityY = -3
+
+    moving4 = createSprite(800/2 - 21700, 700 - 20,20,20)
+    moving4.setCollider("rectangle", -10 , -360 ,580,50)
+    moving4.addImage(PlatformI2)
+    moving4.scale = 0.5
+    moving4.velocityY = -6
+
+
 }
 
 
@@ -1435,4 +1609,18 @@ if(goofy == "nl"){
 
 }
 
+
+function endGame(){
+    print("executed")
+gameOver = true
+ending.x = player.x
+if(respawns.isPlaying() === false){
+    respawns.play()
+}
+ending.changeAnimation("end1", end1I)
+
+ending.visible = true
+
+ending.play();
+}
 
