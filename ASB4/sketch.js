@@ -46,7 +46,9 @@ let goofy = null
 var grounded
 var gameOver = false
 let ending
-
+let endMove
+var alphaval = 0 
+var alphaval2 = 0
 
 function preload(){
 
@@ -175,7 +177,7 @@ shard2I = loadAnimation("images/shard2.png")
 
 function setup(){
     createCanvas(800,700)
-    
+   // pixelDensity(0)
     //GROUPS
     PG = new Group()
     JG = new Group()
@@ -387,6 +389,11 @@ function setup(){
     moving4.velocityY = -6
    // moving2.debug = true
     //LVL2
+    endMove = createSprite(0, 900,20,20)
+    endMove.addImage(PlatformI1 )
+    endMove.scale = 0.3
+
+   
     
 
     //VISIBLE
@@ -598,7 +605,7 @@ function draw(){
 
 //PLAY
 if(gameState === "play" ){
-if(gameOver == false){
+
   //music script (broken)
   /*
   if (checkpoint < 2 && music.isPlaying() === false) {
@@ -656,6 +663,7 @@ if (music2.isPlaying() === false && bruh === 1){
         player.collide(moving2)
     player.collide(moving3)
     player.collide(moving4)
+    player.collide(endMove)
         player.collide(door)
         player.collide(fall)
     if(w2 === true){
@@ -1177,6 +1185,7 @@ else{
 
 //MOVEMENT
 if(death === false ){
+    if(gameOver == false){
     if(Math.round(player.velocityX) > 0){
       //  if(player.isTouching(JG)){
         player.velocityX = player.velocityX - 1
@@ -1369,9 +1378,14 @@ if(keyWentDown("p")){
   //  console.log(Math.round(player.y))
    // console.log(grounded)
     //    console.log(enemy3.y)
-        
-}
+    }   
+    else{
+        if(player.y < -300){
+           // endAnimation()
+        }
     }
+}
+    //end move
 
         
     }  
@@ -1383,6 +1397,28 @@ if(keyWentDown("p")){
 
     }
     drawSprites()
+
+    if(gameOver == true){
+        alphaval = alphaval + 1
+        push()
+        rectMode(CENTER)
+        fill(0,alphaval)
+        rect(player.x,400,1000,1000)
+        pop()
+    }
+    if(gameOver == true){
+        alphaval2 = alphaval2 + 1
+        push()
+        strokeWeight(0)
+        stroke(0)
+        fill(255,0,0,alphaval2)
+        textSize(60)
+        text("THE END", player.x - 125, 350)
+        textSize(25)
+        text("Thanks for Playing", player.x - 105,450)
+        text()
+        pop()
+    }
     
 if(gameState==="title"){
 
@@ -1399,6 +1435,8 @@ if(gameState==="title"){
     if(keyDown("SPACE")){
         gameState = "play"
     }
+
+    
     
 }
 
@@ -1446,6 +1484,11 @@ async function createMoving(){
     moving4.addImage(PlatformI2)
     moving4.scale = 0.5
     moving4.velocityY = -6
+
+    endMove = createSprite(0, 900,20,20)
+    endMove.addImage(PlatformI1 )
+    endMove.scale = 0.3
+
 
 
 }
@@ -1613,7 +1656,14 @@ if(goofy == "nl"){
 function endGame(){
     print("executed")
 gameOver = true
-ending.x = player.x
+endMove.x = player.x
+endMove.velocityY = -6
+//endMove.debug = true
+
+}
+
+function endAnimation(){
+    ending.x = player.x
 if(respawns.isPlaying() === false){
     respawns.play()
 }
@@ -1623,4 +1673,3 @@ ending.visible = true
 
 ending.play();
 }
-
