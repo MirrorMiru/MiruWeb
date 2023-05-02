@@ -38,6 +38,15 @@
             </div>
           </div>
 
+          <div class="dropdown" style = "float: right;">
+            <button class="dropbtn">PLAYER SIZE</button>
+            <div class="dropdown-content">
+              <a onClick="reSize(500,400)">Small</a>
+              <a onClick="reSize(650,550)">Medium</a>
+              <a onClick="reSize(900,700)">Big</a>
+            </div>
+          </div>
+
        <ruffleplayer style="display: flex;
        justify-content: center;
        align-items: center; flex-direction: row;">
@@ -48,7 +57,8 @@
         <script>
 
 var game = './swf/1on1soccer_24.swf';
-
+var iwidth = "500px";
+var iheight = "400px";
 window.RufflePlayer = window.RufflePlayer || {};
 window.RufflePlayer.config = {
     "autoplay": "off",
@@ -76,6 +86,8 @@ window.RufflePlayer.config = {
         
         function start_Ruffle()
         {
+            player.style.height = iheight;
+            player.style.width = iwidth;
             container.appendChild(player);
             player.load(game);   
         }
@@ -84,6 +96,11 @@ window.RufflePlayer.config = {
 function changeGame(newGame){
     game = newGame;
     start_Ruffle();
+}
+function reSize(w,h){
+    iheight = String(h+"px");
+    iwidth = String(w+"px")
+   start_Ruffle();
 }
         </script>
 
