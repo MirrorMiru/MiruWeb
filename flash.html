@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html  style="background-image: url(../IMG/background6.png);">
+
+<head >
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+           <link rel="manifest" href="/site.webmanifest">
+           
+    <title>flash player</title>
+
+<div>
+    <a href = "../games.html" style="text-decoration:none; " class="butttext">BACK</a>
+   <h1 style = "font-size: 50px;">RUFFLE FLASH PLAYER</h1>
+    <h1>its flashin' time</h1>
+</div>
+<hr>
+    <link 
+        rel = "stylesheet"
+        type = "text/css"
+        href = "../style.css"  />
+</head>
+    <body style="border-top: rgb(255, 78, 196); border-bottom: rgb(198, 33, 204); border-left: rgb(195, 121, 255); border-right: rgb(255, 34, 207); border-style: solid; border-width: 10px; ">
+
+        <div class="dropdown">
+            <button class="dropbtn">SELECT GAME</button>
+            <div class="dropdown-content" style="overflow-y: scroll; height: 400px;">
+              <a onClick="changeGame('./swf/gun-mayhem-2-more-ma-13824.swf')">Gun Mayhem</a>
+              <a onClick="changeGame('./swf/1on1soccer_24.swf')">1 on 1 soccer</a>
+              <a onClick="changeGame('./swf/isaac.swf')">TBOI (unstable)</a>
+              <a onClick="changeGame('./swf/dummy2.swf')">Dummy Never Fails 2</a>
+              <a onClick="changeGame('./swf/SuperSmash.swf')">Smash</a>
+              <a onClick="changeGame('./swf/earn2012.swf')">Earn to Die 2012</a>
+              <a onClick="changeGame('./swf/Tasty_Planet.swf')">Tasty Planet</a>
+              <a onClick="changeGame('./swf/meatboy.swf')">Meat Boy</a>
+              <a onClick="changeGame('./swf/bloons2.swf')">Bloons2</a>
+              <a onClick="changeGame('./swf/bloonstd.swf')">Bloons TD</a>
+              <a onClick="changeGame('./swf/bloonstd2.swf')">Bloons TD 2</a>
+              <a onClick="changeGame('./swf/td3.swf')">Bloons TD 3</a>
+              <a onClick="changeGame('./swf/bloonstd4.swf')">Bloons TD 4</a>
+              <a onClick="changeGame('./swf/interactive_buddy.swf')">Interactive Buddy</a>
+              <a onClick="changeGame('./swf/ltf2.swf')">Learn To Fly 2</a>
+              <a onClick="changeGame('./swf/ltf3.swf')">Learn To Fly 3</a>
+              <a onClick="changeGame('./swf/redball4.swf')">Red Ball 4</a>
+              <a onClick="changeGame('./swf/riddle_school.swf')">Riddle School</a>
+              <a onClick="changeGame('./swf/snail-bob.swf')">Snail Bob</a>
+              <a onClick="changeGame('./swf/snail-bob-2.swf')">Snail Bob 2</a>
+          
+            </div>
+          </div>
+
+          <div class="dropdown" style = "float: right;">
+            <button class="dropbtn">PLAYER SIZE</button>
+            <div class="dropdown-content">
+              <a onClick="reSize(500,400)">Small</a>
+              <a onClick="reSize(650,550)">Medium</a>
+              <a onClick="reSize(900,700)">Big</a>
+              <a onClick="reSize(4500,3100)">Gineminosaurus</a>
+            </div>
+          </div>
+
+       <ruffleplayer style="display: flex;
+       justify-content: center;
+       align-items: center; flex-direction: row;">
+        <div id='ruffle'></div>
+
+        <script src='../RUFFLE/ruffle.js'></script>
+
+        <script>
+
+var game = './swf/1on1soccer_24.swf';
+var iwidth = "500px";
+var iheight = "400px";
+window.RufflePlayer = window.RufflePlayer || {};
+window.RufflePlayer.config = {
+    "autoplay": "off",
+    "unmuteOverlay": "visible",
+    "backgroundColor": "#000000",
+    "wmode": "window",
+    "letterbox": "on",
+    "warnOnUnsupportedContent": true,
+    "contextMenu": true,
+    "showSwfDownload": true,
+    "upgradeToHttps": window.location.protocol === "https:",
+    "maxExecutionDuration": 15,
+    "logLevel": "error",
+    "base": null,
+    "menu": true,
+    "scale": "showAll",
+    "forceScale": false,
+    "quality": "high",
+    "splashScreen": true
+}
+        window.addEventListener("DOMContentLoaded", start_Ruffle, false );
+        let ruffle = window.RufflePlayer.newest();
+            let player = ruffle.createPlayer();
+            let container = document.getElementById("ruffle");
+        
+        function start_Ruffle()
+        {
+            player.style.height = iheight;
+            player.style.width = iwidth;
+            container.appendChild(player);
+            player.load(game);   
+        }
+        
+
+function changeGame(newGame){
+    game = newGame;
+    start_Ruffle();
+}
+function reSize(w,h){
+    iheight = String(h+"px");
+    iwidth = String(w+"px")
+   start_Ruffle();
+}
+        </script>
+
+
+        </ruffleplayer>
+
+       
+      
+    </body>
+</html>
