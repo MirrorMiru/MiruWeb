@@ -1,0 +1,270 @@
+body{
+    background-image: url(IMG/background1.jpg);
+    max-width: 960px;
+    margin:0 auto;
+    height: auto;
+}
+
+
+
+.butttext{
+    color : #000000;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: DOS;
+}
+
+
+
+.butttext:hover{
+  color: rgb(149, 149, 149);
+
+}
+
+
+
+
+
+@font-face {
+    font-family: DOS;
+    src: url(../FONTS/pdv437.ttf);
+}
+
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: url("./FONTS/comici.ttf");
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+  }
+  h1{
+    color : #000000;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: DOS;
+    text-align: center;
+}
+
+
+
+butt{
+    text-align:justify;
+    margin: 5%;
+}
+
+maintitle{
+  color : #ff0000;
+  font-size: 30px;
+  font-weight: lighter;
+  font-family: DOS;
+  text-align: center;
+}
+subtitle{
+  color : #ffffff;
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: DOS;
+  text-align: center;
+}
+mainbody{
+  color : #ffffff;
+  font-size: 15px;
+  font-weight: lighter;
+  font-family: DOS;
+  text-align: center;
+}
+
+.topbar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+.topbar2{
+    margin-left: auto;
+    margin-right: auto;
+    background : -webkit-gradient( linear, left top, left bottom, color-stop(.01, #000000), color-stop(1, #000e3a) );
+    width: auto;
+    text-align: center;
+}
+
+  .scrollbox{
+        width: 80%;
+        color: #000;
+        text-align: justify;
+        height: 500px;
+        border-top: rgb(255, 36, 36);
+        border-bottom: rgb(86, 255, 86);
+        border-left: rgb(72, 72, 255);
+        border-right: rgb(221, 221, 49);
+        border-style: solid;
+        font-size: large;
+        padding: 3%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-image: url(./IMG/background.gif);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        border-width: 10px;
+  }
+  .scrollbox2{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    color: #000;
+    text-align: justify;
+    height: 515px;
+    border-top: rgb(255, 78, 196);
+    border-bottom: rgb(198, 33, 204);
+    border-left: rgb(195, 121, 255);
+    border-right: rgb(255, 34, 207);
+    border-style: solid;
+    font-size: large;
+    padding: 3%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    background-image: url(./IMG/background.gif);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-width: 10px;
+}
+  .box{
+    width: 200px;
+    color: #000;
+    text-align: justify;
+    height: 600px;
+    border-top: rgb(255, 78, 196);
+    border-bottom: rgb(198, 33, 204);
+    border-left: rgb(195, 121, 255);
+    border-right: rgb(255, 34, 207);
+    border-style: solid;
+    font-size: large;
+    padding: 3%;
+    background-image: url(./IMG/background6.png);
+    text-align: center;
+    border-width: 10px;
+}
+.box2{
+  width: 600px;
+  color: #000;
+  text-align: justify;
+  height: 600px;
+  border-top: rgb(255, 36, 36);
+  border-bottom: rgb(86, 255, 86);
+  border-left: rgb(72, 72, 255);
+  border-right: rgb(221, 221, 49);
+  border-style: solid;
+  font-size: large;
+  padding: 3%;
+  background-image: url(./IMG/background.gif);
+  text-align: center;
+  border-width: 10px;
+}
+
+  .container{
+    background : -webkit-gradient( linear, left top, left bottom, color-stop(.01, #000000), color-stop(1, #000e3a) );
+      border-top: rgb(255, 36, 36);
+      border-bottom: rgb(86, 255, 86);
+      border-left: rgb(72, 72, 255);
+      border-right: rgb(221, 221, 49);
+      border-style: solid;
+      border-width: 10px;
+      width: 700px;
+      height: fit-content;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-left: 15px;
+  }
+
+  tit{
+    color: #ffffff;
+    font-size: 25px;
+    font-weight:bold;
+    font-family: 'Comic Sans MS';
+  }
+
+  post{
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: lighter;
+    font-family: 'Comic Sans MS';
+  }
+
+  date{
+    color: #ffffff;
+    font-size: 13px;
+    font-family: 'Comic Sans MS';
+    float:bottom;
+    bottom: 0;
+  }
+
+  br{
+    width: 20px;
+}
+
+.column {
+    float: left;
+    padding: 5px;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #8400ff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: solid;
+  font-family: Cherrish;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  color: white;
+  border:solid;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  font-family: 'Comic Sans MS';
+  text-decoration: none;
+  display: block;
+  color: white;
+  border:solid;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ff00bb;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #ff00bb;}
