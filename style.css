@@ -173,7 +173,7 @@ mainbody{
     width: 200px;
     color: #000;
     text-align: justify;
-    height: 600px;
+    height: 627px;
     border-top: rgb(255, 78, 196);
     border-bottom: rgb(198, 33, 204);
     border-left: rgb(195, 121, 255);
@@ -189,7 +189,7 @@ mainbody{
   width: 600px;
   color: #000;
   text-align: justify;
-  height: 600px;
+  height: min-content;
   border-top: rgb(255, 36, 36);
   border-bottom: rgb(86, 255, 86);
   border-left: rgb(72, 72, 255);
