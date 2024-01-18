@@ -1,6 +1,6 @@
 body{
     background-image: url(IMG/background1.jpg);
-    max-width: 960px;
+    /* max-width: 960px; */
     margin:0 auto;
     height: auto;
 }
@@ -8,28 +8,28 @@ body{
 
 
 .butttext{
-    color : #ffffff;
+    color : #000000;
     font-size: 25px;
     font-weight: lighter;
     font-family: Cherrish;
 }
 
 .butttext2{
-  color : #ffffff;
+  color : #000000;
   font-size: 25px;
   font-weight: lighter;
   font-family: Cherrish;
 }
 
 .butttext3{
-  color : #ffffff;
+  color : #000000;
   font-size: 25px;
   font-weight: lighter;
   font-family: Cherrish;
 }
 
 .butttext4{
-  color : #ffffff;
+  color : #000000;
   font-size: 25px;
   font-weight: lighter;
   font-family: Cherrish;
@@ -76,7 +76,7 @@ body{
     text-align: center;
   }
   h1{
-    color : #ffffff;
+    color : #000000;
     font-size: 15px;
     font-weight: lighter;
     font-family: Cherrish;
@@ -91,25 +91,26 @@ butt{
 }
 
 maintitle{
-  color : #ff0000;
+  color : #000000;
   font-size: 30px;
   font-weight: lighter;
   font-family: Cherrish;
   text-align: center;
 }
 subtitle{
-  color : #ffffff;
+  color : #000000;
   font-size: 25px;
   font-weight: lighter;
   font-family: Cherrish;
   text-align: center;
 }
 mainbody{
-  color : #ffffff;
+  color : #000000;
   font-size: 15px;
   font-weight: lighter;
   font-family: 'Comic Sans MS';
   text-align: center;
+
 }
 
 .topbar{
@@ -125,10 +126,13 @@ mainbody{
     background : -webkit-gradient( linear, left top, left bottom, color-stop(.01, rgb(0, 0, 0)), color-stop(1, rgb(69, 0, 122)) );
     width: auto;
     text-align: center;
-    /* border-bottom: rgb(255, 255, 255); */
-    /* border-style: solid; */
-    /* border-width: 2px; */
-    box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    /* border-top: rgb(255, 36, 36);
+    border-bottom: rgb(86, 255, 86);
+    border-left: rgb(72, 72, 255);
+    border-right: rgb(221, 221, 49);
+    border-style: solid;
+    border-width: 10px; */
+    box-shadow: 0 0 0 5px rgb(0, 0, 0);
 }
 
   .scrollbox{
@@ -136,11 +140,11 @@ mainbody{
         color: #000;
         text-align: justify;
         height: 500px;
-        border-top: rgb(255, 36, 36);
+        /* border-top: rgb(255, 36, 36);
         border-bottom: rgb(86, 255, 86);
         border-left: rgb(72, 72, 255);
         border-right: rgb(221, 221, 49);
-        border-style: solid;
+        border-style: solid; */
         font-size: large;
         padding: 3%;
         overflow-y: scroll;
@@ -149,7 +153,7 @@ mainbody{
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        border-width: 10px;
+        /* border-width: 10px; */
   }
   .scrollbox2{
     display: flex;
@@ -174,7 +178,7 @@ mainbody{
     border-width: 10px;
 }
   .box{
-    width: 200px;
+    /* width: 200px; */
     color: #000;
     text-align: justify;
     height: 627px;
@@ -190,30 +194,32 @@ mainbody{
     border-width: 10px;
 }
 .box2{
-  width: 600px;
+  /* width: 600px; */
   color: #000;
   text-align: justify;
   height: min-content;
-  border-top: rgb(255, 36, 36);
+  /* border-top: rgb(255, 36, 36);
   border-bottom: rgb(86, 255, 86);
   border-left: rgb(72, 72, 255);
-  border-right: rgb(221, 221, 49);
-  border-style: solid;
+  border-right: rgb(221, 221, 49); */
+  /* border-style: solid; */
   font-size: large;
   padding: 3%;
   background-image: url(./IMG/background.gif);
   text-align: center;
-  border-width: 10px;
+  /* border-width: 10px; */
+  box-shadow: 0 0 0 5px rgb(0, 0, 0);
+  
 }
 
   .container{
     background : -webkit-gradient( linear, left top, left bottom, color-stop(.01, #000000), color-stop(1, #000e3a) );
-      border-top: rgb(255, 36, 36);
+      /* border-top: rgb(255, 36, 36);
       border-bottom: rgb(86, 255, 86);
       border-left: rgb(72, 72, 255);
-      border-right: rgb(221, 221, 49);
-      border-style: solid;
-      border-width: 10px;
+      border-right: rgb(221, 221, 49); */
+      /* border-style: solid; */
+      /* border-width: 10px; */
       width: 700px;
       height: fit-content;
       margin-top: 50px;
@@ -222,21 +228,21 @@ mainbody{
   }
 
   tit{
-    color: #ffffff;
+    color: #000000;
     font-size: 25px;
     font-weight:bold;
     font-family: 'Comic Sans MS';
   }
 
   post{
-    color: #ffffff;
+    color: #000000;
     font-size: 15px;
     font-weight: lighter;
     font-family: 'Comic Sans MS';
   }
 
   date{
-    color: #ffffff;
+    color: #000000;
     font-size: 13px;
     font-family: 'Comic Sans MS';
     float:bottom;
@@ -306,3 +312,45 @@ mainbody{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #ff00bb;}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
