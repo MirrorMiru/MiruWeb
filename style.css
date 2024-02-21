@@ -173,6 +173,8 @@ mainbody{
     text-align: center;
     border-width: 10px;
 }
+
+
   .box{
     width: 200px;
     color: #000;
@@ -306,3 +308,4 @@ mainbody{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #ff00bb;}
+
