@@ -5,6 +5,14 @@ body{
     height: auto;
 }
 
+html{
+    cursor: url(./IMG/cursor/cursor.png),auto
+  }
+  
+  a{
+    cursor: url(./IMG/cursor/pointer.png),auto
+  }
+
 .butttext:hover {
     color: rgb(43, 0, 255);
   }

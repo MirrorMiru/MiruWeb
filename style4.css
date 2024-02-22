@@ -4,6 +4,15 @@ body{
     margin:0 auto;
     height: auto;
 }
+
+html{
+    cursor: url(./IMG/cursor/cursorDark.png),auto
+  }
+  
+  a{
+    cursor: url(./IMG/cursor/pointerDark.png),auto
+  }
+
 .butttext:hover {
     color: rgb(0, 255, 81);
   }

@@ -54,6 +54,13 @@ body{
     text-align: center;
 }
 
+html{
+  cursor: url(../IMG/cursor/cursorDark.png),auto
+}
+
+a{
+  cursor: url(../IMG/cursor/pointerDark.png),auto
+}
 
 
 butt{
@@ -224,6 +231,8 @@ mainbody{
     clear: both;
     display: table;
   }
+
+
 
 
 /* Dropdown Button */

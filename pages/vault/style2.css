@@ -8,6 +8,14 @@ body{
     font-family: Cherrish;
     src: url(../../FONTS/Cherish.ttf);
 }
+
+html{
+  cursor: url(../../IMG/cursor/cursor.png),auto
+}
+
+a{
+  cursor: url(../../IMG/cursor/pointer.png),auto
+}
 .center {
     display: block;
     margin-left: auto;

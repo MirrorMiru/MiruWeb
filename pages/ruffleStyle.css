@@ -5,6 +5,14 @@ body{
     height: auto;
 }
 
+html{
+  cursor: url(../IMG/cursor/cursor.png),auto
+}
+
+a{
+  cursor: url(../IMG/cursor/pointer.png),auto
+}
+
 .container{
   border-top: rgb(255, 36, 36);
   border-bottom: rgb(86, 255, 86);
@@ -276,6 +284,7 @@ mainbody{
 .dropdown {
   position: relative;
   display: inline-block;
+  cursor: url(../IMG/cursor/pointer.png),auto
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -302,10 +311,10 @@ mainbody{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ff00bb;}
+.dropdown-content a:hover {background-color: #ff00bb; cursor: url(../IMG/cursor/pointer.png),auto}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #ff00bb;}
+.dropdown:hover .dropbtn {background-color: #ff00bb; cursor: url(../IMG/cursor/pointer.png),auto}

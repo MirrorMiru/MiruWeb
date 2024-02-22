@@ -5,6 +5,14 @@ body{
     height: auto;
 }
 
+html{
+    cursor: url(./IMG/cursor/cursor.png),auto
+  }
+  
+  a{
+    cursor: url(./IMG/cursor/pointer.png),auto
+  }
+
 .butttext:hover {
     color: rgb(255, 0, 0);
   }
@@ -12,6 +20,7 @@ body{
     font-family: Romance;
     src: url(FONTS/RomanceA.ttf);
 }
+
 
 @font-face {
     font-family: 'Comic Sans MS';

@@ -4,6 +4,14 @@ body{
     margin:0 auto;
     height: auto;
 }
+
+html{
+  cursor: url(./IMG/cursor/cursor.png),auto
+}
+
+a{
+  cursor: url(./IMG/cursor/pointer.png),auto
+}
 @font-face {
     font-family: Cherrish;
     src: url(../FONTS/Cherish.ttf);

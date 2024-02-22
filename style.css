@@ -3,9 +3,16 @@ body{
     max-width: 960px;
     margin:0 auto;
     height: auto;
+  
 }
 
+html{
+  cursor: url(./IMG/cursor/cursor.png),auto
+}
 
+a{
+  cursor: url(./IMG/cursor/pointer.png),auto
+}
 
 .butttext{
     color : #ffffff;
@@ -308,4 +315,10 @@ mainbody{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #ff00bb;}
+
+
+
+
+
+
 

@@ -4,7 +4,13 @@ body{
    
 }
 
+html{
+  cursor: url(./IMG/cursor/cursor.png),auto
+}
 
+a{
+  cursor: url(./IMG/cursor/pointer.png),auto
+}
 
 .butttext{
     color : #ffffff;
