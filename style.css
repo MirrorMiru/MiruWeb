@@ -1,6 +1,7 @@
 body{
     background-image: url(IMG/background1.jpg);
     max-width: 960px;
+    width: 960px;
     margin:0 auto;
     height: auto;
   
