@@ -7,6 +7,12 @@ body{
   
 }
 
+@media only screen and (max-width: 1200px) {
+  .planet {
+    display: none;
+  }
+}
+
 html{
   cursor: url(./IMG/cursor/cursor.png),auto
 }
