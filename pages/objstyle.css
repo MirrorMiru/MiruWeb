@@ -10,7 +10,11 @@ body{
 
 }
 
-
+@media only screen and (max-width: 1550px) {
+  .claire {
+    display: none;
+  }
+}
 
 .butttext{
     color : #000000;
@@ -25,6 +29,7 @@ body{
   color: rgb(149, 149, 149);
 
 }
+
 
 
 
@@ -245,40 +250,3 @@ mainbody{
   font-family: Cherrish;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #000000;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
-  z-index: 1;
-  color: white;
-  border:solid;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: rgb(255, 255, 255);
-  padding: 12px 16px;
-  font-family: 'Comic Sans MS';
-  text-decoration: none;
-  display: block;
-  color: white;
-  border:solid;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ff00bb;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #ff00bb;}
