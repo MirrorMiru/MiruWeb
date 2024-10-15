@@ -30,6 +30,7 @@
     <div style="margin-left: 46pc; position: absolute; float: right;">
       <!-- <img style="position: absolute; top: 25px; width:118px ; height:auto ;" src='./IMG/yan.gif' onmouseover="this.src='./IMG/yan2.gif';" onmouseout="this.src='./IMG/yan.gif';" ><div  style="position:absolute; right:50%; top: 11px;"><a href="./pages/advert.html"><img alt = "popup advert" title ="FREE STUFF FREE STUFF FREE STUFF" src="./IMG/click here.png" style="width: 200px; height: 140px; position: absolute; top: 22px; left:270px"/></a></div>-->
       <!--NOTE TO SELF. FIX THIS AN REIMPLEMENT LATER -->
+      <!-- NOTE TO SELF. THIS IS NEVER BEING REIMPLEMENTED -->
       <img src='./IMG/SammyPeekL.gif' onmouseover="this.src='./IMG/Sammypeekblink.gif';" onmouseout="this.src='./IMG/SammyPeekL.gif'; " style="width: auto; height: 160px; margin-top: -97px; margin-left: -10px;" />
     </div>
     <hr>
@@ -103,7 +104,7 @@
           </div>
           <img style="margin-top: 15px; width: 120px; height: auto;" src="./IMG/objPortal.gif" />
         </div>
-        
+
         <div class="box2" style="display:flex; flex-direction:column; height: 630px;">
           <!--<img alt = "Sammson Shooting a Gun" title = "pew" src = "./IMG/gun.png" style="width: 55px; height: auto; position: absolute; top:178px"/>-->
           <maintitle>GREETINGS TRAVELLER!</maintitle>
@@ -200,12 +201,39 @@ box-shadow: 0px 0px 105px 10px rgba(255,255,255,0.9); margin: 15px;"/></a>   -->
           </div>
         </div>
         <div class="box2" style="display:flex; flex-direction:row; width: 405px; height:100px;">
-          <!-- <div style="display: flex; width:100pc; justify-content: center; align-items: center;"><a href="https://miru.123guestbook.com/"><img src="./IMG/booklogo.gif" style="width: auto; height: 100px;"></a></div><img src="./IMG/Guestbook.gif" style="height: 200px; width: auto; margin-top: -60px; margin-bottom: -40px; margin-right: -50px;"/> -->
-          <mainbody> Nothing here right now, check back later.</mainbody>
+     
+          <div style="display: flex; width:100pc; justify-content: center; align-items: center; flex-direction: column;">
+            <button id="ASong" onClick="playPause(); change();">
+              <audio
+                src="./MP3/Cave Story OST - T28_ Balcony.mp3"
+                autoplay
+                loop
+              ></audio>
+              Toggle Music
+            </button>
+            
+            <script>
+              var aud = document.getElementById("ASong").children[0];
+              var isPlaying = false;
+              aud.pause();
+
+              function playPause() {
+                if (isPlaying) {
+                  aud.pause();
+                } else {
+                  aud.play();
+                }
+                isPlaying = !isPlaying;
+              }
+            </script>
+  
+          </div>      
+<img src="./IMG/balcony.png" style="height: auto; width: auto; margin-bottom: -29px; margin-right: -29px;" /> 
         </div>
       </div>
-      <div class="box2" style="display:flex; flex-direction:row; width: auto; height: 325px;">
-        <div style="display: flex; flex-direction: column;">
+
+      <div class="box2" style="display:flex;flex-direction:row;width: auto;height: 325px;justify-content: center;align-items: center;align-content: center;">
+        <!-- <div style="display: flex; flex-direction: column;">
           <div style="display: flex; flex-direction: row; height: 100px; margin-top: 100px;">
             <img src="./IMG/ufo.gif" style="margin-top: -100px; width: 80px; height: 50px;" />
             <img src="./IMG/flyingufo.gif" style="width: 471px;" />
@@ -213,9 +241,18 @@ box-shadow: 0px 0px 105px 10px rgba(255,255,255,0.9); margin: 15px;"/></a>   -->
           </div>
           <mainbody style="margin-bottom: 40px;"> TODO: Tell people about the chatbox.</mainbody>
           <mainbody>Oh yeah, there's a chatbox here --&gt;</mainbody>
-          <!-- <img src="./IMG/SammyChatbox.gif" style="height: auto; width: 350px;  margin-top: -55px; margin-left: 130px;"/> -->
-        </div>
-        <div style="display: flex; width:100pc; justify-content: center; align-items: center;">
+          <img src="./IMG/SammyChatbox.gif" style="height: auto; width: 350px;  margin-top: -55px; margin-left: 130px;"/>
+        </div> -->
+        <div style="  border-top: rgb(255, 78, 196);
+        border-bottom: rgb(198, 33, 204);
+        border-left: rgb(195, 121, 255);
+        border-right: rgb(255, 34, 207);
+        border-style: solid;
+        border-width: 15px;
+        margin-right: 25px;">
+        <iframe width="314" height="321" scrolling="no" src="https://gifypet.neocities.org/pet/pet.html?name=Sammson&dob=1728970380&gender=f&element=N/A&pet=https%3A%2F%2Fmiru.page%2FIMG%2FPetSam.gif&map=https%3A%2F%2Fmiru.page%2FIMG%2Fbackgrounds%2Fbg19.gif&background=https%3A%2F%2Fmiru.page%2FIMG%2Fbackgrounds%2Fbg53.gif&tablecolor=white&textcolor=white" frameborder="0"></iframe>
+      </div>
+      
           <div style="  border-top: rgb(255, 78, 196);
       border-bottom: rgb(198, 33, 204);
       border-left: rgb(195, 121, 255);
@@ -224,8 +261,11 @@ box-shadow: 0px 0px 105px 10px rgba(255,255,255,0.9); margin: 15px;"/></a>   -->
       border-width: 15px;">
             <iframe src="https://www3.cbox.ws/box/?boxid=3535657&boxtag=BwtKlu" width="100%" height="300px" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
           </div>
-        </div>
+     
       </div>
+
+
+    
       <img src="./IMG/linhaazul.gif" />
       <div class="box" style="display:flex; flex-direction:row; width: auto; height:min-content">
         <marquee scrolldelay=60>
