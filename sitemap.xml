@@ -5,292 +5,377 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-<!-- because im lazy -->
+
 
 <url>
   <loc>https://miru.page/</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://miru.page/home.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://miru.page/aboutme.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miru.page/art.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miru.page/games.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/computers.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/advert.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://miru.page/blog.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://miru.page/pages/newart.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/webcomics.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <loc>https://miru.page/games.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/computers.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/badges.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objective.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/caution.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://miru.page/home.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://miru.page/pages/password.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/char/sammy.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://miru.page/gmeLegacy.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/vault.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://miru.page/pages/asb.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/flash.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://miru.page/collection.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/main90.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/80smachines/main80.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/charchters.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/char/kenova.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <loc>https://miru.page/pages/webcomics.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/vault/2023.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/2022.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/2022l.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/2022m.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/2022e.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/2021.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/2020.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/old.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <loc>https://miru.page/pages/objPages/1.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/mobiles.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/toys.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/misc.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/generic/pentium3.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/generic/luggable.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/apple/g4_1.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/apple/g4_2.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/dell/Dimension_XPS_R350.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/dell/Dimension_V350.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/dell/Dimension_2100.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/compaq/presario_9546.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/ibm/consultant.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/ibm/risc.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/ibm/unisys.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/samsung/spc.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/90smachines/sun/ipx.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/80smachines/commodore/plus4.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/80smachines/ti/ti99.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 <url>
   <loc>https://miru.page/pages/80smachines/epson/hx20.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/vee.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/char/proton.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <loc>https://miru.page/pages/objPages/2.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://miru.page/pages/char/nameless.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/order.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/misery.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/claire.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/boss.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/guy.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/destiny.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/child.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/rad.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/vault/yan.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
-  <priority>0.41</priority>
-</url>
-<url>
-  <loc>https://miru.page/pages/char/protonite.html</loc>
-  <lastmod>2023-03-05T20:37:50+00:00</lastmod>
+  <loc>https://miru.page/pages/objPages/3.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
   <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/4.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.26</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/5s.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.21</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/5e.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.17</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/5w.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.17</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/6d.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.17</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/5n.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.13</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/6w.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.13</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/7d.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.13</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/7w.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.11</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/8.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.09</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/7wb.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.07</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9ed.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.07</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9sd.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.05</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9nd.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.05</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9wd.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.04</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/10dd.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.04</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9wn.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.04</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9sn.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.03</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9nn.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.03</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/9en.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.02</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/10dn.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.02</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/10wn.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.02</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11n.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.02</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/constr.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.02</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11w.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11e.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11t.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/constr2.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11s.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11s1.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11s2.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11s3.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11w1.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.01</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11w2.html</loc>
+  <lastmod>2024-11-02T08:05:32+00:00</lastmod>
+  <priority>0.00</priority>
+</url>
+<url>
+  <loc>https://miru.page/pages/objPages/11w3.html</loc>
+  <lastmod>2024-11-02T08:05:33+00:00</lastmod>
+  <priority>0.00</priority>
 </url>
 
 

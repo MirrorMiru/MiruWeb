@@ -1,0 +1,96 @@
+<title>MIRU!</title>
+
+<html style="background-image: url(./IMG/backgrounds/bg17.gif); ">
+
+    <head >
+        <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+         <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+                <link rel="manifest" href="../site.webmanifest">
+        <div style="height: 0px;">
+            <a href = "../home.html" style="text-decoration:none; color: black;" class="butttext">BACK</a>
+        </div>
+        <link 
+            rel = "stylesheet"
+            type = "text/css"
+            href = "./pages/passwordStyle.css"  />
+
+    </head>
+
+
+
+<body>
+
+ 
+<div style = "display: flex; width: 100vw; height: 100vh; justify-content: center; justify-self: center; align-items: center;">
+  
+    <div style="
+  color: #000;
+  text-align: justify;
+  border-top: rgb(255, 36, 36);
+  border-bottom: rgb(86, 255, 86);
+  border-left: rgb(72, 72, 255);
+  border-right: rgb(221, 221, 49);
+  border-style: solid;
+  font-size: large;
+  background-image: url(./IMG/ship/shipbg.png);
+  text-align: center;
+  border-width: 10px;
+  width: 750px;
+  height: 750px;
+        ">
+
+<div id="hoverDiv" style="width: 190px; height: 50px; margin-left: 280px; margin-top: 465px; cursor: url(./IMG/cursor/pointerDark.png), auto; position: absolute; z-index: 10;" onclick="location.href='./sitemap.xml';">
+</div>
+<img id="image" src="./IMG/ship/shipkb1.png" alt="./IMG/ship/shipkb2.png" style=" position: absolute; z-index: 1; margin-left: -375px;">
+
+<div id="hoverDiv2" style="width: 100px; height: 100px; margin-left: 160px; margin-top: 280px; cursor: url(./IMG/cursor/pointerDark.png), auto; position: absolute; z-index: 10;" onclick="location.href='./home.html';">
+</div>
+<img id="image2" src="./IMG/ship/shipmon1.png" alt="./IMG/ship/shipmon2.png" style=" position: absolute; z-index: 1; margin-left: -375px;">
+
+<div id="hoverDiv3" style="width: 180px; height: 40px; margin-left: 430px; margin-top: 345px; cursor: url(./IMG/cursor/pointerDark.png), auto; position: absolute; z-index: 10;" onclick="location.href='./index.html';">
+</div>
+<img id="image3" src="./IMG/ship/shipwin1.png" alt="./IMG/ship/shipwin2.png" style=" position: absolute; z-index: 1; margin-left: -375px;">
+
+
+
+    </div>
+
+    <script>
+      const hoverDiv = document.getElementById("hoverDiv");
+      const image = document.getElementById("image");
+      
+      hoverDiv.addEventListener("mouseover", () => {
+          image.src = "./IMG/ship/shipkb2.png";
+      });
+      
+      hoverDiv.addEventListener("mouseout", () => {
+          image.src = "./IMG/ship/shipkb1.png";
+      });
+
+      const hoverDiv2 = document.getElementById("hoverDiv2");
+      const image2 = document.getElementById("image2");
+      
+      hoverDiv2.addEventListener("mouseover", () => {
+          image.src = "./IMG/ship/shipmon2.png";
+      });
+      
+      hoverDiv2.addEventListener("mouseout", () => {
+          image.src = "./IMG/ship/shipmon1.png";
+      });
+      
+      
+      const hoverDiv3 = document.getElementById("hoverDiv3");
+      const image3 = document.getElementById("image3");
+      
+      hoverDiv3.addEventListener("mouseover", () => {
+          image.src = "./IMG/ship/shipwin2.png";
+      });
+      
+      hoverDiv3.addEventListener("mouseout", () => {
+          image.src = "./IMG/ship/shipwin1.png";
+      });
+      
+      </script>
+   
+</body>
