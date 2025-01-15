@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head>
+  <title>Intern161</title>
+<script>
+  function fadeInPage() {
+      if (!window.AnimationEvent) { return; }
+      var fader = document.getElementById('fader');
+      fader.classList.add('fade-out');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.AnimationEvent) { return; }
+      var anchors = document.getElementsByTagName('a');
+    
+    for (var idx=0; idx<anchors.length; idx+=1) {
+      if (anchors[idx].hostname !== window.location.hostname ||
+            anchors[idx].pathname === window.location.pathname) {
+            continue;
+        }
+        anchors[idx].addEventListener('click', function(event) {
+            var fader = document.getElementById('fader'),
+                anchor = event.currentTarget;
+            
+            var listener = function() {
+                window.location = anchor.href;
+                fader.removeEventListener('animationend', listener);
+            };
+            fader.addEventListener('animationend', listener);
+            
+            event.preventDefault();
+            fader.classList.add('fade-in');
+        });
+    }
+});
+
+window.addEventListener('pageshow', function (event) {
+  if (!event.persisted) {
+    return;
+  }
+  var fader = document.getElementById('fader');
+  fader.classList.remove('fade-in');
+});
+</script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+<body style="height: 100pc; display: flex; justify-content: center;">
+  <audio autoplay="" loop="">
+    <source src="./audio/Apoxode_-_Melting_Paint.mp3" type="audio/mpeg">
+</audio>
+  <svg id="fader"> </svg>
+  
+
+  <div class="bg-container">
+    <div class="bg-scroll"></div>
+  </div>
+
+  
+
+  <div class="centered"><img src = "./images/logo.png" style=" width: 30pc; margin-bottom: 500px;" class="bobbing"></div>
+
+  <div class="centered"><img src = "./images/papercuttout.png" style=" width: 17pc; margin-left: 750px; margin-top: 400px;" class="bouncer"></div>
+ 
+  <a href="./cutscene.html"><img src = "./images/play.png" style=" width: 10pc;" class="centered"></a>
+<div style=" position: absolute; bottom: 0; display: flex; flex-direction: column; align-items: center; font-family: Arial, sans-serif; ">
+  <div class="attribution-block" style="color: white; font-size: 12px;">Music: <a href="https://dig.ccmixter.org/files/Apoxode/68628">Melting Paint</a> by Apoxode (c) copyright 2024 Licensed under a Creative Commons <a href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution Noncommercial (4.0)</a> license. Ft: Speck, MalreDeszik, jaspertine</div>
+  <div class="attribution-block" style="color: white;">Everything Else by MirrorMiru (ME!)</div>
+  <div class="attribution-block" style="color: white;">Game Ver: 0.2 (unfinished)</div>
+  </div>
+  <script>
+    fadeInPage();
+</script>
+
+
+
+</body>
+
+</html>

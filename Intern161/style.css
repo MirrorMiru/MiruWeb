@@ -1,0 +1,171 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black; 
+ 
+  /* font-size: 50px;
+  font-family: "Comic Sans MS";
+  font-weight: 400; */
+ 
+}
+
+html{
+  cursor: url(./images/cursor/cursorDark.png),auto
+}
+
+a{
+  cursor: url(./images/cursor/pointerDark.png),auto
+}
+
+button{
+  cursor: url(./images/cursor/pointerDark.png),auto
+}
+
+canvas {
+  position: absolute;
+  display: block;
+  border : 8px solid rgb(0, 0, 0);
+  /* color: #ffffff; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);   
+} 
+
+.p5Canvas{
+  width:800px;
+  height:600px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate3d(-50%,-50%,0);
+  overflow:hidden;
+  box-shadow: 0 0 90px rgb(255, 255, 255);
+  border-radius:10px;
+}
+
+.bg-container /* used for presentation */ {
+  width:800px;
+  height:600px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate3d(-50%,-50%,0);
+  overflow:hidden;
+  box-shadow: 0 0 90px rgba(255, 255, 255, 0.7);
+  border-radius:10px;
+}
+
+.bg-scroll {
+	opacity: 1;
+  position: absolute;
+  /* make BG larger than container */
+  height: 150%;
+  width: 150%;
+  /* center bg in container - ratio of 150% */
+  top: -25%;
+  left: -25%;
+  background: url(./images/paper.png) repeat;
+  animation: backgroundScroll 25s linear infinite;
+  transform: rotate(45deg) scale(1.1);
+  transform-origin: center center;
+}
+
+@keyframes backgroundScroll {
+	0% {
+    background-position: 0 0;
+  }
+	100% {
+    /* pattern bg texture is 1000x1000px */
+    background-position:0 -2048px;
+  }
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bobbing {
+  -webkit-animation: mover 1.5s infinite  alternate;
+  animation: mover 1.5s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+#fader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  pointer-events: none;
+  background: rgb(0, 0, 0);
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-out {
+  from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+#fader.fade-out {
+  opacity: 0;
+  animation-name: fade-out;
+}
+
+#fader.fade-in {
+  opacity: 1;
+  animation-name: fade-in;
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+.bouncer {  
+
+  
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  color: white;
+}
+.bouncer:hover {
+  cursor: url(./images/cursor/pointerDark.png),auto;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+}

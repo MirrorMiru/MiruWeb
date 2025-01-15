@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"><head>
+  <title>Intern161</title>
+<script>
+  function fadeInPage() {
+      if (!window.AnimationEvent) { return; }
+      var fader = document.getElementById('fader');
+      fader.classList.add('fade-out');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.AnimationEvent) { return; }
+      var anchors = document.getElementsByTagName('a');
+    
+    for (var idx=0; idx<anchors.length; idx+=1) {
+      if (anchors[idx].hostname !== window.location.hostname ||
+            anchors[idx].pathname === window.location.pathname) {
+            continue;
+        }
+        anchors[idx].addEventListener('click', function(event) {
+            var fader = document.getElementById('fader'),
+                anchor = event.currentTarget;
+            
+            var listener = function() {
+                window.location = anchor.href;
+                fader.removeEventListener('animationend', listener);
+            };
+            fader.addEventListener('animationend', listener);
+            
+            event.preventDefault();
+            fader.classList.add('fade-in');
+        });
+    }
+});
+
+window.addEventListener('pageshow', function (event) {
+  if (!event.persisted) {
+    return;
+  }
+  var fader = document.getElementById('fader');
+  fader.classList.remove('fade-in');
+});
+</script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+
+</head>
+<body style="height: 100pc; display: flex; justify-content: center;">
+  <svg id="fader"> </svg>
+  <audio autoplay="" loop="">
+    <source src="./audio/comp_ambience.mp3" type="audio/mpeg">
+</audio>
+
+
+  <div class="bg-container" style="box-shadow: 0 0 90px rgba(255, 0, 0, 0.7); background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(56,0,0,1) 46%, rgba(88,0,0,1) 71%, rgba(255,0,0,1) 100%);">
+    <img src="./images/terminal.gif">
+  </div>
+
+ <div class="centered"><dialog id="myDia" class="bobbing" style="margin-right: -225px;width: 400px; height: 150px; border-width: 10px; border-radius: 5px; border-color: white; background-color: black;"> <div style="display: flex; flex-direction: column; align-items: center;"><text style="color: red; font-family: Arial, sans-serif;">GREETINGS [valued customer], AND THANK YOU FOR EXPRESSING INTEREST IN THE INTERNSHIP PROGRAM AT [corporation office building number 161]!</text> 
+  <button type="button" onclick="closeDialog(1); showDialog(2)" style="width: 50px; height: 50px; border-width: 10px; border-radius: 5px; border-color: red; background-color: black; color: red; margin-top: 25px;">--&gt;</button>
+</div></dialog></div> 
+
+<div class="centered"><dialog id="myDia2" class="bobbing" style="margin-right: -225px;width: 400px; height: 150px; border-width: 10px; border-radius: 5px; border-color: white; background-color: black;"> <div style="display: flex; flex-direction: column; align-items: center;"><text style="color: red; font-family: Arial, sans-serif;">A-CORP IS PLEASED TO ANNOUNCE THAT YOUR APPLICATION HAS BEEN [accepted]! PLEASE ENTER YOUR NAME BELOW...</text> 
+  <input type="text" style="margin-top: 10px; color: red; border-color: red; background-color: black; border-width: 5px;"><br>
+  <button type="button" onclick="closeDialog(2); showDialog(3)" style="width: 100px; height: 50px; border-width: 10px; border-radius: 5px; border-color: red; background-color: black; color: red; margin-top: 0px;">ENTER</button>
+</div></dialog></div> 
+
+<div class="centered"><dialog id="myDia3" class="bobbing" style="margin-right: -225px;width: 400px; height: 150px; border-width: 10px; border-radius: 5px; border-color: white; background-color: black;"> <div style="display: flex; flex-direction: column; align-items: center;"><text style="color: red; font-family: Arial, sans-serif;">THANK YOU! THIS INFORMATION WILL BE DISREGARDED. YOU HAVE BEEN ASSIGNED THE NAME [intern 8008135]. PLEASE PRESS CONTINUE TO VIEW OUR LEGALLY BINDING TERMS OF SERVICE</text> 
+  <button type="button" onclick="closeDialog(3); showDialog(4)" style="width: 100px; height: 50px; border-width: 10px; border-radius: 5px; border-color: red; background-color: black; color: red; margin-top: 5px;">CONTINUE</button>
+</div></dialog></div> 
+
+<div class="centered"><dialog id="myDia4" class="bobbing" style="margin-right: -225px;width: 400px; height: 150px; border-width: 10px; border-radius: 5px; border-color: white; background-color: black;"> <div style="display: flex; flex-direction: column; align-items: center;"><text style="color: red; font-family: Arial, sans-serif; overflow-y: scroll; height: 80px; white-space: pre-line;">A-CORP© corporate internship program for organics™ TERMS OF SERVICE. Please be aware that accepting these terms of service is legally binding, A-CORP© and any of its subsidiaries are not responsible for any misinterpretation, misreading, and/or negligence while reading this document. These conditions serve as a death waiver,  A-CORP© and any of its subsidiaries are not responsible for any death or injury sustained on work time, on any A-CORP© company campus.
+
+  EXPECTATIONS:
+  As a part of the A-CORP© corporate internship program for organics™ you are expected to fulfill your duties as assigned by your dedicated supervisor or any A-CORP© staff member outranking you. You are legally obligated to fulfill any task given regardless of safety, feasibility, or current mood. As a intern, you are outranked and therefore legally obligated to obey: A-CORP© DATA TERMINAL UNIT™, A-CORP© OfficeMAX™ Class III Sentient Humanoid Synth, A-CORP© OfficeMAX™ Class I Sentient Humanoid Droid, A-CORP© ConTek™ Class I Light Construction Droid, A-CORP© ConTek™ Class I Heavy Construction Droid, Receptionists, Administrative Assistants, Executive Assistant, Office Managers, Operations Managers, Facilities Managers, and any other organic lifeform on permanent company payroll. 
+
+  REQUIREMENTS AND CONSEQUENCES:
+  As a part of the A-CORP© corporate internship program for organics™ you are required to work at least 8 hours a day, with 4 hours of free time allowed each work day. You must work 6 days a week. Failure to meet these requirements may lead to your termination, as well as a decrease of credit score, social score, A-CORP© SuperPTS™ rewards points, as well as reputation within  A-CORP© and any of its subsidiaries. Early termination from the A-CORP© corporate internship program for organics™ may prevent employment at any future A-CORP© position.
+
+  PAYMENT:
+  The A-CORP© corporate internship program for organics™ is unpaid.
+
+  DEATH WAIVER:
+  As a part of the A-CORP© corporate internship program for organics™ you agree to be exposed to class I, II, III, and IV carcinogens, asbestos, hazardous environments, radioactive residue, radioactive elements, biohazards, cognitohazards, infohazards, fiberglass, class I, II, III, and IV irritants. Any sudden, unexpected, or expected death on company ground and/or company time is fully your fault, you and/or your family may NOT sue, libel, or slander A-CORP© for any death or injury. Body removal cost will be charged to any living family members in case of death.
+
+  A-CORP© THANKS YOU FOR PARTICIPATING IN OUR corporate internship program for organics™. KEEP IN MIND THAT DECLINING THIS TOS WILL RESULT IN EARLY TERMINATION FROM THE corporate internship program for organics™, AND ANY CONSEQUENCES LISTED ABOVE MAY BE ENACTED.  
+  
+  </text>
+  <div>
+    <button type="button" onclick="closeDialog(4); showDialog('skibidi')" style="width: 100px; height: 50px; border-width: 10px; border-radius: 5px; border-color: red; background-color: black; color: red; margin-top: 15px; margin-right: 30px;">ACCEPT</button>
+  <button id="change" type="button" onclick="changeText()" style="width: 100px; height: 50px; border-width: 10px; border-radius: 5px; border-color: red; background-color: black; color: red; margin-top: 15px;">DECLINE</button>
+</div>
+</div></dialog></div> 
+ 
+
+  <div class="centered"><img onclick="showDialog(1); style.display = 'none';" src ="./images/diastart.png" style="width:17pc; margin-top: 300px; cursor: url(./images/cursor/pointerDark.png),auto;" class="bobbing"></div>
+  <div class="centered"><img id="skibidi" onclick="location.href='./game.html';" src ="./images/well.png" style="width:17pc; margin-top: 300px; cursor: url(./images/cursor/pointerDark.png),auto; display: none;" class="bobbing"></div>
+  <script>
+    fadeInPage();
+</script>
+
+
+<script>
+  const dialog = document.getElementById("myDia"); 
+  const dialog2 = document.getElementById("myDia2"); 
+  const dialog3 = document.getElementById("myDia3"); 
+  const dialog4 = document.getElementById("myDia4"); 
+
+  let redirect = false;
+  
+  function showDialog(num) { 
+    if(num == 2){
+      dialog2.show(); 
+    }else if(num == 3){
+      dialog3.show(); 
+    }else if(num == 4){
+      dialog4.show(); 
+    }else if(num == 1){
+    dialog.show(); 
+    }
+
+    if(num == 'skibidi'){
+      document.getElementById("skibidi").style.display = 'block'; 
+    }
+  } 
+
+  function changeText(){
+    document.getElementById('change').innerText = 'ACCEPT';
+    if(redirect == false){
+    redirect = true;
+    }else{
+      closeDialog(4); 
+      showDialog('skibidi');
+    }
+  }
+  
+  function closeDialog(num) { 
+    if(num == 2){
+      dialog2.close(); 
+    }else if(num == 3){
+      dialog3.close(); 
+    }else if(num == 4){
+      dialog4.close(); 
+    }else{
+    dialog.close(); 
+    }
+  } 
+  </script>
+
+
+</body>
+
+</html>
