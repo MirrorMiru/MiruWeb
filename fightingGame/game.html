@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head>
+    <title>Intern161</title>
+    <script>
+        function fadeInPage() {
+            if (!window.AnimationEvent) { return; }
+            var fader = document.getElementById('fader');
+            fader.classList.add('fade-out');
+          }
+      
+          document.addEventListener('DOMContentLoaded', function() {
+            if (!window.AnimationEvent) { return; }
+            var anchors = document.getElementsByTagName('a');
+          
+          for (var idx=0; idx<anchors.length; idx+=1) {
+            if (anchors[idx].hostname !== window.location.hostname ||
+                  anchors[idx].pathname === window.location.pathname) {
+                  continue;
+              }
+              anchors[idx].addEventListener('click', function(event) {
+                  var fader = document.getElementById('fader'),
+                      anchor = event.currentTarget;
+                  
+                  var listener = function() {
+                      window.location = anchor.href;
+                      fader.removeEventListener('animationend', listener);
+                  };
+                  fader.addEventListener('animationend', listener);
+                  
+                  event.preventDefault();
+                  fader.classList.add('fade-in');
+              });
+          }
+      });
+      
+      window.addEventListener('pageshow', function (event) {
+        if (!event.persisted) {
+          return;
+        }
+        var fader = document.getElementById('fader');
+        fader.classList.remove('fade-in');
+      });
+      </script>
+      
+    <script src="p5.min.js"></script>
+ 
+    <script src="p5.sound.min.js"></script> 
+    <script src="planck.min.js"></script>
+    <!-- <script src="p5play.js"></script> -->
+    <script src="p5play.min.js"></script>
+    <script src="game2.js"></script>
+ 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+  </head>
+
+  <body>
+    <svg id="fader"> </svg>
+    <!-- <audio autoplay="" loop = "">
+        <source src="./audio/Apoxode_-_Melting_Paint.mp3" type="audio/mpeg">
+    </audio> -->
+    <script>
+        fadeInPage();
+    </script>
+</body></html>
