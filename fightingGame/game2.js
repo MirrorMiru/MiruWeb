@@ -262,7 +262,7 @@ function preload() {
     PrincessWalk.frameDelay = 18;
     PrincessAttack.frameDelay = 40;
 
-    cityMSpaint.scale = 2.20
+    cityMSpaint.scale = 1.10
     cityMSpaint.frameDelay = 20
 
     SelectBg.scale.x = 2.165;
