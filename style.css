@@ -102,7 +102,17 @@ a{
     text-align: center;
 }
 
-
+.bottom {
+  position: absolute;
+  bottom: 0;                       /* stick to the bottom */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;                   /* optional padding */
+  flex-direction: column;
+}
 
 butt{
     text-align:justify;
@@ -223,6 +233,7 @@ mainbody{
   background-image: url(./IMG/background.gif);
   text-align: center;
   border-width: 10px;
+  position: relative;
 }
 
   .container{
