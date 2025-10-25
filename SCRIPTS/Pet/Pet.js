@@ -41,7 +41,7 @@
     standMax: 2.2,        // s
     walkBurstMin: 1.2,    // s
     walkBurstMax: 3.5,    // s
-    standChanceAfterFall: 0.45,  // probability to stand after landing
+    standChanceAfterFall: 1,  // probability to stand after landing
     zIndex: 99999,
     draggableCursor: 'grab',
     draggingCursor: 'grabbing',
@@ -114,9 +114,10 @@
       const floor = floorY();
       py = clamp(py, 0, floor);
       // Flip if facing left
+    
       const flip = face > 0 ? ' scaleX(-1)' : '';
       el.style.transform = `translate(${px|0}px, ${(py|0)}px)${flip}`;
-     
+      
     }
 
     function setState(s) {
@@ -301,32 +302,38 @@
           // Position is controlled by pointer events; nothing to integrate here
           break;
         }
-        case 'falling': {
-          // Apply gravity
-          vy = clamp(vy + C.gravity * dt, -Infinity, C.maxFallSpeed);
-          px += vx * dt;
-          py += vy * dt;
+       case 'falling': {
+  // Apply gravity
+  vy = clamp(vy + C.gravity * dt, -Infinity, C.maxFallSpeed);
+  px += vx * dt;
+  py += vy * dt;
 
-          // Horizontal screen bounds
-          if (px <= 0) { px = 0; vx = Math.abs(vx); face = 1; }
-          if (px >= window.innerWidth - el.offsetWidth) { px = window.innerWidth - el.offsetWidth; vx = -Math.abs(vx); face = -1; }
+  // Horizontal screen bounds
+  if (px <= 0) { px = 0; vx = Math.abs(vx); face = 1; }
+  if (px >= window.innerWidth - el.offsetWidth) { px = window.innerWidth - el.offsetWidth; vx = -Math.abs(vx); face = -1; }
 
-          // Land on floor
-          const floor = floorY();
-          if (py >= floor) {
-            py = floor;
-            vy = 0;
+  // Ceiling bounce 👇
+  if (py <= 0) {
+    py = 0;
+    if (vy < 0) vy = -vy * 0.5; // lose some speed
+  }
 
-            // After landing, either stand a bit or start walking
-            if (Math.random() < C.standChanceAfterFall) setState('standing');
-            else {
-              dir = (Math.random() < 0.5 ? -1 : 1);
-              face = dir;
-              setState('walking');
-            }
-          }
-          break;
-        }
+  // Floor collision
+  const floor = floorY();
+  if (py >= floor) {
+    py = floor;
+    vy = 0;
+
+    if (Math.random() < C.standChanceAfterFall) setState('standing');
+    else {
+      dir = (Math.random() < 0.5 ? -1 : 1);
+      face = dir;
+      setState('walking');
+    }
+  }
+  break;
+}
+
       }
 
       layout();
