@@ -1,18 +1,258 @@
-<!-- Your page -->
-<div style="height:200vh">Scroll & play with the pet!</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jukebox (Web1, iframe-friendly)</title>
+    <style>
+      
 
 
-  <script src="./Pet/Pet.js"></script>
-<script>
-  initWebsitePet({
-    gifs: {
-      walking: './Pet/testpet/walk.gif',
-      standing: './Pet/testpet/stand.gif',
-      falling: './Pet/testpet/fall.gif',
-      hanging: './Pet/testpet/hang.gif'
-    },
-     width: 1187,
-    height: 1280,
-    scale: 0.12
-  });
-</script>
+body, .jukebox {
+   cursor: url(../IMG/cursor/cursor.png),auto;
+}
+
+button.btn, .btns button, .controls button {
+    cursor: url(../IMG/cursor/pointer.png),auto;
+}
+
+
+      /* === Web1: flat, hard borders; sized for small iframes === */
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; background: transparent; font-family: Arial, Helvetica, sans-serif; }
+
+      /* Fill the whole iframe */
+      .jukebox { position: relative; width: 100%; height: 100%; background: #ffffff; border: 2px solid #000; overflow: hidden; }
+
+      /* Background canvas (scrolling tiles only) */
+      .jukebox__canvas { position:absolute; inset:0; display:block; image-rendering: pixelated; }
+
+      /* Top bar (kept) */
+      .topbar { position: absolute; left: 0; right: 0; top: 0; height: 24px; background: #0000aa; color: #ffffff; border-bottom: 2px solid #000; display: flex; align-items: center; gap: 6px; padding: 0 6px; font-weight: bold; font-size: 12px; }
+      .topbar .dot { width: 8px; height: 8px; background:#ffff00; border:1px solid #000; }
+
+      /* Controls: compact except marquee stays roomy */
+      .controls { position: absolute; left: 6px; right: 6px; bottom: 6px; border: 2px solid #000; background: #e0e0e0; padding: 4px; display: grid; grid-template-columns: auto 1fr auto; gap: 6px; align-items: center; }
+      .btns { display: flex; gap: 4px; }
+      button.btn { font: 11px/1 Arial, Helvetica, sans-serif; background: #d0d0d0; border: 2px solid #000; padding: 4px 6px; height: 26px; cursor: pointer; color:#000; }
+      button.btn:active { background:#bdbdbd; }
+
+      /* Marquee: keep full size for readability */
+      .marquee-wrap { border: 2px solid #000; background: #fff; padding: 0; overflow: hidden; }
+      .marquee { position: relative; width: 100%; overflow: hidden; }
+      .marquee__track { display: inline-flex; white-space: nowrap; will-change: transform; animation: marquee var(--marq-dur, 16s) linear infinite; }
+      .marquee__item { font-weight: bold; color: #aa0000; font-size: 14px; padding-right: 24px; }
+      @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+      /* Time + compact progress */
+      .time { font-size: 11px; }
+      .progress { position:absolute; left:6px; right:6px; bottom: 44px; height: 6px; border:2px solid #000; background:#fff; }
+      .progress__bar { height:100%; width:0%; background:#00aa00; }
+    </style>
+  </head>
+  <body>
+    <div class="jukebox" id="jukebox"></div>
+
+    <script>
+      /**
+       * Jukebox (Web1 iframe-friendly)
+       * - No page chrome; fills the iframe entirely
+       * - Background: tiny tiled image scrolling on both X & Y (looped), slower speeds
+       * - Controls compact; marquee/title remains full size
+       * - Accepts array: { src, name, image }
+       */
+      class Jukebox {
+        container; canvas; ctx; audio; progressBar; marqueeTrack; marqueeA; marqueeB; timeCur; timeTotal;
+        playlist; index = 0; playing = false;
+
+        // Background scroll
+        bgImg = null; bgReady = false;
+        offsetX = 0; offsetY = 0;
+        dirX = 1; dirY = 1; // -1 or +1 each
+        speedX = 8; speedY = 8; // px/s (slow for small containers)
+        tileSize = 48; // small tiles
+        lastT = 0; animId = null; resizeObserver;
+
+        static mount(el, playlist) { return new Jukebox(el, playlist); }
+
+        constructor(el, playlist = []) {
+          this.container = el; this.playlist = playlist;
+          this.#buildUI(); this.#bind(); this.#observeResize();
+          if (this.playlist.length) this.load(0, true);
+        }
+
+        #buildUI(){
+          this.container.innerHTML = '';
+
+          // Top bar
+          const top = document.createElement('div');
+          top.className = 'topbar';
+          top.innerHTML = '<div class="dot"></div><div>JUKEBOX.EXE</div>';
+          this.container.appendChild(top);
+
+          // Canvas (scrolling background only)
+          this.canvas = document.createElement('canvas');
+          this.canvas.className = 'jukebox__canvas';
+          this.container.appendChild(this.canvas);
+          this.ctx = this.canvas.getContext('2d');
+
+          // Progress
+          const progress = document.createElement('div'); progress.className = 'progress';
+          this.progressBar = document.createElement('div'); this.progressBar.className = 'progress__bar'; progress.appendChild(this.progressBar);
+          this.container.appendChild(progress);
+
+          // Controls (compact)
+          const controls = document.createElement('div'); controls.className = 'controls';
+          controls.innerHTML = `
+            <div class="btns">
+              <button class="btn" data-action="prev">&laquo; Back</button>
+              <button class="btn" data-action="toggle">Play/Pause</button>
+              <button class="btn" data-action="next">Forward &raquo;</button>
+            </div>
+            <div class="marquee-wrap">
+              <div class="marquee">
+                <div class="marquee__track" id="marqueeTrack">
+                  <span class="marquee__item" id="marqA"></span>
+                  <span class="marquee__item" id="marqB"></span>
+                </div>
+              </div>
+            </div>
+            <div class="time"><span id="ctime">0:00</span> / <span id="ttime">0:00</span></div>
+          `;
+          this.container.appendChild(controls);
+          this.marqueeTrack = controls.querySelector('#marqueeTrack');
+          this.marqueeA = controls.querySelector('#marqA');
+          this.marqueeB = controls.querySelector('#marqB');
+          this.timeCur = controls.querySelector('#ctime');
+          this.timeTotal = controls.querySelector('#ttime');
+
+          // Audio
+          this.audio = new Audio(); this.audio.preload = 'metadata'; this.audio.crossOrigin = 'anonymous';
+        }
+
+        #bind(){
+          this.container.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-action]'); if (!btn) return;
+            const a = btn.getAttribute('data-action');
+            if (a === 'prev') this.prev();
+            if (a === 'next') this.next();
+            if (a === 'toggle') this.toggle();
+          });
+          this.audio.addEventListener('ended', () => this.next());
+          this.audio.addEventListener('timeupdate', () => this.#updateProgress());
+          this.audio.addEventListener('loadedmetadata', () => this.#updateProgress(true));
+        }
+
+        #observeResize(){
+          const resize = () => {
+            const rect = this.container.getBoundingClientRect();
+            const dpr = Math.max(1, window.devicePixelRatio || 1);
+            this.canvas.width = Math.max(1, Math.round(rect.width * dpr));
+            this.canvas.height = Math.max(1, Math.round(rect.height * dpr));
+            this.canvas.style.width = rect.width + 'px';
+            this.canvas.style.height = rect.height + 'px';
+            this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const iw = this.tileSize, ih = this.tileSize;
+            this.offsetX %= Math.max(1, iw); this.offsetY %= Math.max(1, ih);
+          };
+          this.resizeObserver = new ResizeObserver(resize); this.resizeObserver.observe(this.container); resize();
+        }
+
+        async load(i, autoplay=false){
+          if (!this.playlist?.length) return;
+          this.index = (i + this.playlist.length) % this.playlist.length;
+          const track = this.playlist[this.index];
+
+          // audio
+          this.audio.src = track.src; try { await this.audio.load(); } catch(_){}
+
+          // title + seamless marquee
+          this.#setTitle(track.name || 'Untitled');
+
+          // background image and randomized scroll (slow range)
+          this.#prepareBackground(track.image);
+          this.#randomizeScroll();
+
+          if (autoplay) this.play(); else this.pause();
+        }
+
+        #setTitle(text){
+          const safe = String(text);
+          const content = `>>> ${safe} <<<`;
+          this.marqueeA.textContent = content; this.marqueeB.textContent = content;
+          queueMicrotask(() => {
+            const aW = this.marqueeA.getBoundingClientRect().width;
+            const trackW = aW * 2; // two copies side-by-side
+            const pxPerSec = 55; // tuned for small containers
+            const dur = Math.max(10, trackW / pxPerSec);
+            this.marqueeTrack.style.setProperty('--marq-dur', `${dur.toFixed(2)}s`);
+          });
+        }
+
+        #randomizeScroll(){
+          const s = () => (Math.random() < 0.5 ? -1 : 1);
+          this.dirX = s(); this.dirY = s();
+          this.speedX = 6 + Math.random() * 12; // 6..18 px/s
+          this.speedY = 6 + Math.random() * 12; // 6..18 px/s
+          this.tileSize = 48;
+        }
+
+        #prepareBackground(src){
+          this.bgReady = false; this.bgImg = new Image(); this.bgImg.crossOrigin = 'anonymous';
+          this.bgImg.onload = () => { this.bgReady = true; };
+          this.bgImg.onerror = () => { this.bgReady = false; };
+          this.bgImg.src = src || '';
+          this.offsetX = 0; this.offsetY = 0; if (!this.animId) this.#tick(performance.now());
+        }
+
+        #tick = (t) => {
+          if (!this.lastT) this.lastT = t;
+          const dt = Math.min(0.05, (t - this.lastT) / 1000);
+          this.lastT = t;
+          this.offsetX += this.dirX * this.speedX * dt;
+          this.offsetY += this.dirY * this.speedY * dt;
+          this.#render();
+          this.animId = requestAnimationFrame(this.#tick);
+        }
+
+        #render(){
+          const ctx = this.ctx; const { width: W, height: H } = this.canvas;
+          ctx.clearRect(0,0,W,H);
+          if (!this.bgReady || !this.bgImg) return;
+          const iw = this.tileSize, ih = this.tileSize;
+          let ox = ((this.offsetX % iw) + iw) % iw; let oy = ((this.offsetY % ih) + ih) % ih;
+          for (let x = -ox; x < W; x += iw) {
+            for (let y = -oy; y < H; y += ih) {
+              ctx.drawImage(this.bgImg, x, y, iw, ih);
+            }
+          }
+        }
+
+        #updateProgress(force=false){
+          const cur = this.audio.currentTime || 0; const dur = (this.audio.duration && isFinite(this.audio.duration)) ? this.audio.duration : 0;
+          this.timeCur.textContent = this.#fmt(cur); this.timeTotal.textContent = dur ? this.#fmt(dur) : '0:00';
+          const p = dur ? (cur / dur) * 100 : 0; this.progressBar.style.width = p + '%';
+          if (force && dur) this.timeTotal.textContent = this.#fmt(dur);
+        }
+
+        #fmt(sec){ sec = Math.max(0, Math.floor(sec)); const m = Math.floor(sec/60); const s = sec%60; return m+":"+s.toString().padStart(2,'0'); }
+
+        async play(){ try { await this.audio.play(); this.playing = true; } catch(_){} }
+        pause(){ this.audio.pause(); this.playing = false; }
+        toggle(){ this.playing ? this.pause() : this.play(); }
+        prev(){ this.load(this.index - 1, true); }
+        next(){ this.load(this.index + 1, true); }
+
+        setPlaylist(list){ this.playlist = Array.isArray(list) ? list : []; if (this.playlist.length) this.load(0,false); }
+      }
+
+      // === Demo wiring ===
+      const demoPlaylist = [
+        { src: '../MP3/BalconyCaveStory.mp3', name: 'Balcony (Cave Story OST) - Daisuke Amaya', image: '../IMG/backgrounds/cavestory_tile.png' },
+      ];
+      const el = document.getElementById('jukebox');
+      const jukebox = Jukebox.mount(el, demoPlaylist);
+      window.Jukebox = Jukebox; window.jukebox = jukebox;
+    </script>
+  </body>
+</html>
